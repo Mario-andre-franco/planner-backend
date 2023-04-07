@@ -9,16 +9,14 @@ var cors = require("cors")
 
 dotenv.config()
 
-mongoose.connect(process.env.MONGO_HOST, {
-    UseUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_HOST)
 
-const db = mongoose.connection;
+// const db = mongoose.connection;
 
-db.on('error', console.error.bind(console,'Erro de conexão com o db'))
-db.once('open', () => {
-    console.log('conexão ok')
-})
+// db.on('error', console.error.bind(console,'Erro de conexão com o db'))
+// db.once('open', () => {
+//     console.log('conexão ok')
+// })
 
 app.use(cors())
  

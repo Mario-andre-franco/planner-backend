@@ -14,7 +14,18 @@ module.exports = {
             res.status(500).json({ message: 'Erro ao buscar aluno.' });
         }
     },
-
+    async findAlunos(req, res) {
+        try {
+            const aluno = await Aluno.find();
+            if (!aluno) {
+            return res.status(404).json({ message: 'Aluno não encontrado.' });
+            }
+            res.json(aluno);
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ message: 'Erro ao buscar aluno.' });
+        }
+    },
     async novoAluno(req,res) {
         try {
             const {nome, email, horarioAula, diaSemana} = req.body
