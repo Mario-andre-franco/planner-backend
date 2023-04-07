@@ -9,7 +9,12 @@ var cors = require("cors")
 
 dotenv.config()
 
-mongoose.connect(process.env.MONGO_HOST)
+mongoose.connect("mongodb+srv://mariodev:SQEDU6gw1GnhoVXq@cluster0.nssbf4n.mongodb.net/alunos_db?retryWrites=true&w=majority", {
+}).then(() => {
+    console.log('Conexao subiu')
+}).catch((err) => {
+    console.error('Erro ao conectar', err)
+})
 
 // const db = mongoose.connection;
 
