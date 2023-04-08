@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 var app = express()
 var alunoRotas = require("./routes/alunos.js")
+var usuarioRotas = require("./routes/usuario.js")
 var cors = require("cors")
 
 
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use("/alunos",alunoRotas);
+app.use("/usuario", usuarioRotas)
 
 app.listen(8686,() => {
     console.log("Servidor rodando")
