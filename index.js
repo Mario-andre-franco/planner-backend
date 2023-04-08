@@ -18,13 +18,6 @@ mongoose.connect(url, {
     console.error('Erro ao conectar', err)
 })
 
-// const db = mongoose.connection;
-
-// db.on('error', console.error.bind(console,'Erro de conexão com o db'))
-// db.once('open', () => {
-//     console.log('conexão ok')
-// })
-
 app.use(cors())
  
 // parse application/x-www-form-urlencoded
