@@ -9,7 +9,9 @@ var cors = require("cors")
 
 dotenv.config()
 
-mongoose.connect(process.env.MONGO_HOST, {
+
+const url = process.env.MONGO_HOST
+mongoose.connect(url, {
 }).then(() => {
     console.log('Conexao subiu')
 }).catch((err) => {
