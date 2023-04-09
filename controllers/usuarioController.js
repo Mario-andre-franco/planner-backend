@@ -28,7 +28,7 @@ module.exports = {
     },
 
     async verificaUsuario(req,res) {
-        var token = req.headers['x-acess-token']
+        var token = req.headers['x-access-token']
         if(!token) {
             res.status(401).send({auth:false, message: 'Nenhum token encontrado'})
         }
